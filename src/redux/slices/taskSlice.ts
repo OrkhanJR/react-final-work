@@ -4,7 +4,9 @@ export const taskSlice = createSlice({
     name: "tasks",
     initialState: [],
     reducers: {
-        
+        addTask: () => {
+            
+        }
     }
 })
 

@@ -1,7 +1,7 @@
 const TaskLists = () => {
   return (
     <>
-      <div>
+      <div className="tasks-list">
         <ul>
           <li>list</li>
           <li>list</li>
