@@ -3,10 +3,12 @@ import TaskLists from "./TaskLists/TaskLists";
 
 const SideBar = () => {
   return (
-    <div className="sidebar-wrapper">
-      <SearchArea />
-      <TaskLists />
-    </div>
+    <>
+      <div className="sidebar-wrapper">
+        <SearchArea />
+        <TaskLists />
+      </div>
+    </>
   );
 };
 
