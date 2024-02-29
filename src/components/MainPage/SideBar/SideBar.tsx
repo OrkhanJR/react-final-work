@@ -1,18 +1,12 @@
-import SearchButtonComponent from "./SearchButtonComponent/SearchButtonComponent";
-import SearchInputComponent from "./SearchInputComponent/SearchInputComponent";
+import SearchArea from "./SearchArea/SearchArea";
+import TaskLists from "./TaskLists/TaskLists";
 
 const SideBar = () => {
   return (
-    <>
-      <div className="sidebar-wrapper">
-        <div className="search-area">
-          {" "}
-          <SearchInputComponent />
-          <SearchButtonComponent />
-        </div>
-        <hr />
-      </div>
-    </>
+    <div className="sidebar-wrapper">
+      <SearchArea />
+      <TaskLists />
+    </div>
   );
 };
 

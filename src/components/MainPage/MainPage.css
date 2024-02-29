@@ -1,0 +1,9 @@
+.sidebar-wrapper {
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 100%;
+  border-right: 1px solid #e3e3e3;
+  padding: 10px;
+}
