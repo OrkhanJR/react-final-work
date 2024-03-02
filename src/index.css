@@ -1,6 +1,8 @@
 @import url(../src/components/MainPage/SideBar/SearchArea/searchArea.css);
 @import url(../src/components/MainPage/MainPage.css);
 @import url(../src/components/MainPage/SideBar/TaskLists/TaskLists.css);
+@import url(../src/components/EditPage/EditPage.css);
+@import url(../src/components/MainPage/SideBar/TaskLists/Task/Task.css);
 
 * {
   margin: 0;

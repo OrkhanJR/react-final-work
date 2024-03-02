@@ -8,11 +8,18 @@ const TaskLists = () => {
     <>
       <div className="tasks-list">
         <ul>
-          {tasks.map((task) => (
-            <li key={task.id}>
-              <Link to={`tasks/${task.id}`}>{task.title}</Link>
-            </li>
-          ))}
+          {tasks.length > 0  ? (
+            <ul>
+              {tasks.map((task) => (
+                <li key={task.id}>
+                  <Link to={`tasks/${task.id}`}>{task.title}</Link>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <i>No tasks available</i>
+          )}
+          
         </ul>
       </div>
     </>

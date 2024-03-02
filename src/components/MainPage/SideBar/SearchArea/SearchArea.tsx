@@ -7,23 +7,33 @@ const SearchArea = () => {
   const dispatch = useTypedDispatch();
 
   const handleAddTask = () => {
-    const newTask: Task = {
-      id:  Math.random().toString(36).substring(2, 9),
-      title: "New Task", 
+    const currentDate = new Date();
+    const formattedDate = `${currentDate.getHours()}:${currentDate.getMinutes()} ${currentDate.getDate()} ${currentDate.toLocaleString(
+      "default",
+      { month: "long" }
+    )} ${currentDate.getFullYear()}`;
+
+    const newTask = {
+      id: Math.random().toString(36).substring(2, 9),
+      title: "New Task",
+      description: "",
+      creationDate: formattedDate,
     };
+
     dispatch(addTask(newTask));
   };
+
   return (
     <>
       <div className="search-area">
         {" "}
         <InputComponent
-          className="search-input"
+          className="input-styles"
           type="text"
           placeholder="Search"
         />
         <ButtonComponent
-          className="new-task-button"
+          className="task-button"
           onClick={() => dispatch(handleAddTask)}
         >
           New Task

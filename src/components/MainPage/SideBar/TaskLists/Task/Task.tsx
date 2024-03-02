@@ -7,8 +7,10 @@ import "./Task.css";
 type Task = {
   id: string;
   title: string;
+  description?: string;
 };
 
+// eslint-disable-next-line @typescript-eslint/no-redeclare
 const Task = () => {
   const tasks: Task[] = JSON.parse(localStorage.getItem("tasks") || "[]");
 
@@ -32,7 +34,7 @@ const Task = () => {
         <p>{task.title}</p>
         <p>{task.id}</p>
         <Form action="edit">
-          <ButtonComponent className="new-task-button">Edit</ButtonComponent>
+          <ButtonComponent className="task-button">Edit</ButtonComponent>
         </Form>
         <Form
           method="post"
@@ -44,7 +46,7 @@ const Task = () => {
             }
           }}
         >
-          <ButtonComponent className="new-task-button">Delete</ButtonComponent>
+          <ButtonComponent className="task-button">Delete</ButtonComponent>
         </Form>
       </div>
     </div>

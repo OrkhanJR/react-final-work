@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
 type buttonType = {
-  className: string;
+  className?: string;
   children: ReactNode | ReactNode[];
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
 };
