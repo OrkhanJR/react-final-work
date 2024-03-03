@@ -2,8 +2,7 @@
 @import url(../src/components/MainPage/MainPage.css);
 @import url(../src/components/MainPage/SideBar/TaskLists/TaskLists.css);
 @import url(../src/components/EditPage/EditPage.css);
-@import url(../src/components/MainPage/SideBar/TaskLists/Task/Task.css);
-
+@import url(../src/components/DetailsPage/DetailsPage.css);
 * {
   margin: 0;
   padding: 0;
@@ -19,11 +18,17 @@ button {
   cursor: pointer;
 }
 
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 li {
+  list-style: none;
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  margin-top: 20px;
+  gap: 10px;
 }
 
 a {

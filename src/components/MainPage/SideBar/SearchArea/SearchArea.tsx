@@ -28,6 +28,8 @@ const SearchArea = () => {
       title: inputValue,
       description: "",
       creationDate: formattedDate,
+      status: false,
+      checkStatus: false
     };
 
     dispatch(addTask(newTask));
