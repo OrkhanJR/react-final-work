@@ -18,11 +18,11 @@ const TaskLists = () => {
 
   useEffect(() => {
     tasks.forEach((task) => {
-      const storedTask = JSON.parse(localStorage.getItem(task.id) || "{}");
+      const storedTask = JSON.parse(localStorage.getItem(task.id) ?? "{}");
       dispatch(
         changeCheckStatus({
           taskId: task.id,
-          checkStatus: storedTask.checkStatus || false,
+          checkStatus: storedTask.checkStatus,
         })
       );
     });
