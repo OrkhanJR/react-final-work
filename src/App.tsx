@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
 import Task from "./components/MainPage/SideBar/TaskLists/Task/Task";
 import EditPage from "./components/EditPage/EditPage";
+import DetailsPage from "./components/DetailsPage/DetailsPage";
 
 const router = createBrowserRouter([
   {
@@ -11,13 +12,17 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
+        path: "tasks/:taskId/Details",
+        element: <DetailsPage />,
+      },
+      {
         path: "tasks/:taskId",
         element: <Task />,
       },
       {
-        path:"tasks/:taskId/Edit",
-        element: <EditPage />
-      }
+        path: "tasks/:taskId/Edit",
+        element: <EditPage />,
+      },
     ],
   },
 ]);

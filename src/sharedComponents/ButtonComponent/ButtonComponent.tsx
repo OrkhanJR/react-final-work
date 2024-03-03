@@ -1,9 +1,9 @@
-import { ReactNode } from "react";
+import { MouseEventHandler, ReactNode } from "react";
 
 type buttonType = {
   className?: string;
   children: ReactNode | ReactNode[];
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  onClick?: MouseEventHandler<HTMLButtonElement> | undefined;
 };
 
 const ButtonComponent = ({ className, children, onClick }: buttonType) => {
