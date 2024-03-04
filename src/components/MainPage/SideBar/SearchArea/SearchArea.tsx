@@ -6,6 +6,7 @@ import { useState } from "react";
 
 const SearchArea = () => {
   const dispatch = useTypedDispatch();
+
   const [inputValue, setInputValue] = useState("");
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -29,7 +30,7 @@ const SearchArea = () => {
       description: "",
       creationDate: formattedDate,
       status: false,
-      checkStatus: false
+      checkStatus: false,
     };
 
     dispatch(addTask(newTask));
@@ -40,19 +41,21 @@ const SearchArea = () => {
     <>
       <div className="search-area">
         {" "}
-        <InputComponent
-          className="input-styles"
-          type="text"
-          placeholder="Title"
-          value={inputValue}
-          onChange={handleInputChange}
-        />
-        <ButtonComponent
-          className="task-button"
-          onClick={() => dispatch(handleAddTask)}
-        >
-          New Task
-        </ButtonComponent>
+        <div className="add-task-wrapper">
+          <InputComponent
+            className="input-styles"
+            type="text"
+            placeholder="Title"
+            value={inputValue}
+            onChange={handleInputChange}
+          />
+          <ButtonComponent
+            className="task-button"
+            onClick={() => dispatch(handleAddTask)}
+          >
+            New Task
+          </ButtonComponent>
+        </div>
       </div>
       <hr />
     </>

@@ -1,5 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+export type TaskFilter = "all" | "done" | "undone";
+
 export type Task = {
   creationDate: string;
   id: string;
@@ -11,10 +13,12 @@ export type Task = {
 
 type TaskState = {
   tasks: Task[];
+  filter: TaskFilter;
 };
 
 const initialState: TaskState = {
   tasks: JSON.parse(localStorage.getItem("tasks") ?? "[]"),
+  filter: "all",
 };
 
 export const taskSlice = createSlice({
@@ -54,15 +58,22 @@ export const taskSlice = createSlice({
     changeCheckStatus: (state, action) => {
       const taskId = action.payload;
       const taskToChange = state.tasks.find((task) => task.id === taskId);
-      if(taskToChange) {
+      if (taskToChange) {
         taskToChange.checkStatus = !taskToChange.checkStatus;
         localStorage.setItem("tasks", JSON.stringify(state.tasks));
       }
     },
+    
   },
 });
 
-export const { addTask, deleteTask, editTask, changeStatus,changeCheckStatus } =
-  taskSlice.actions;
+export const {
+  addTask,
+  deleteTask,
+  editTask,
+  changeStatus,
+  changeCheckStatus,
+  
+} = taskSlice.actions;
 
 export default taskSlice.reducer;

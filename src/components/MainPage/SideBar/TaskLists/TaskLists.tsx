@@ -1,4 +1,4 @@
-import  { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../../store";
 import { Link } from "react-router-dom";
@@ -15,6 +15,23 @@ const TaskLists = () => {
   const tasks = useSelector((state: RootState) => state.taskSlice.tasks);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [filteredTasks, setFilteredTasks] = useState([...tasks]);
+  const [filter, setFilter] = useState("all");
+
+  useEffect(() => {
+    setFilteredTasks(
+      tasks.filter((task) => {
+        if (filter === "all") {
+          return true;
+        } else if (filter === "done") {
+          return task.status;
+        } else if (filter === "undone") {
+          return !task.status;
+        }
+        return true;
+      })
+    );
+  }, [tasks, filter]);
 
   useEffect(() => {
     tasks.forEach((task) => {
@@ -51,9 +68,38 @@ const TaskLists = () => {
   return (
     <>
       <div className="tasks-list">
-        {tasks.length > 0 ? (
+        <div className="filter-wrapper">
+          <label>
+            <InputComponent
+              type="radio"
+              name="filter"
+              checked={filter === "all"}
+              onChange={() => setFilter("all")}
+            />
+            All
+          </label>
+          <label>
+            <InputComponent
+              type="radio"
+              name="filter"
+              checked={filter === "done"}
+              onChange={() => setFilter("done")}
+            />
+            Done
+          </label>
+          <label>
+            <InputComponent
+              type="radio"
+              name="filter"
+              checked={filter === "undone"}
+              onChange={() => setFilter("undone")}
+            />
+            Undone
+          </label>
+        </div>
+        {filteredTasks.length > 0 ? (
           <ul>
-            {tasks.map((task) => (
+            {filteredTasks.map((task) => (
               <li key={task.id}>
                 <InputComponent
                   type="checkbox"

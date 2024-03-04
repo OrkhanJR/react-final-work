@@ -1,46 +1,63 @@
+.input-styles {
+  width: 200px;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8rem 0.75rem;
+  box-shadow: 0 0px 1px hsla(0, 0%, 0%, 0.2), 0 1px 2px hsla(0, 0%, 0%, 0.2);
+  background-color: white;
+  line-height: 1.5;
+  margin: 0;
+}
 
-  .input-styles {
-    width: 200px;
-    border: none;
-    border-radius: 8px;
-    padding: 0.8rem 0.75rem;
-    box-shadow: 0 0px 1px hsla(0, 0%, 0%, 0.2), 0 1px 2px hsla(0, 0%, 0%, 0.2);
-    background-color: white;
-    line-height: 1.5;
-    margin: 0;
-  }
-  
-  .task-button {
-    border-radius: 8px;
-    padding: 0.8rem 0.75rem;
-    box-shadow: 0 0px 1px hsla(0, 0%, 0%, 0.2), 0 1px 2px hsla(0, 0%, 0%, 0.2);
-    background-color: white;
-    line-height: 1.5;
-    cursor: pointer;
-    outline: none;
-    color: #3992ff;
-    font-weight: 300;
-    width: 100px;
-    border: none;
-    text-align: center;
-  }
-  
-  .input-styles:hover,
-  .task-button:hover {
-    box-shadow: 0 0px 1px hsla(0, 0%, 0%, 0.6), 0 1px 2px hsla(0, 0%, 0%, 0.2);
-  }
-  
-  .input-styles:focus,
-  .task-button:focus {
-    outline: none;
-    box-shadow: 0 0px 1px hsla(0, 0%, 0%, 0.6), 0 1px 2px hsla(0, 0%, 0%, 0.2);
-  }
-  
-  .search-area {
-    max-height: 100px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding-bottom: 10px;
-  }
-  
+.task-button {
+  border-radius: 8px;
+  padding: 0.8rem 0.75rem;
+  box-shadow: 0 0px 1px hsla(0, 0%, 0%, 0.2), 0 1px 2px hsla(0, 0%, 0%, 0.2);
+  background-color: white;
+  line-height: 1.5;
+  cursor: pointer;
+  outline: none;
+  color: #3992ff;
+  font-weight: 300;
+  width: 100px;
+  border: none;
+  text-align: center;
+}
+
+.input-styles:hover,
+.task-button:hover {
+  box-shadow: 0 0px 1px hsla(0, 0%, 0%, 0.6), 0 1px 2px hsla(0, 0%, 0%, 0.2);
+}
+
+.input-styles:focus,
+.task-button:focus {
+  outline: none;
+  box-shadow: 0 0px 1px hsla(0, 0%, 0%, 0.6), 0 1px 2px hsla(0, 0%, 0%, 0.2);
+}
+
+.search-area {
+  max-height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 15px;
+}
+
+.add-task-wrapper {
+  display: flex;
+  gap: 10px;
+}
+
+.filter-wrapper {
+  display: flex;
+  gap: 10px;
+}
+
+label:hover {
+  cursor: pointer;
+}
+
+label > input:hover {
+  cursor: pointer;
+}
